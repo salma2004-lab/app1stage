@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Liste des Stagiaires</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header>
+        <h1>Liste des Stagiaires</h1>
+    </header>
+
+    <main>
+        <!-- Formulaire de filtrage -->
+        <form method="GET" action="lister.php">
+            <div class="form-group">
+                <label for="filiere">Filière :</label>
+                <select id="filiere" name="filiere" required>
+                    <option value="">--Choisir une filière--</option>
+                    <option value="Développement Web">Développement Web</option>
+                    <option value="Réseaux et Télécommunications">Réseaux et Télécommunications</option>
+                    <option value="Informatique">Informatique</option>
+                </select>
+            </div>
+
+            <div class="form-group">
+                <label for="annee">Année d'Étude :</label>
+                <select id="annee" name="annee" required>
+                    <option value="">--Choisir une année--</option>
+                    <option value="1">1ère année</option>
+                    <option value="2">2ème année</option>
+                    <option value="3">3ème année</option>
+                </select>
+            </div>
+
+            <button type="submit">Afficher la Liste</button>
+        </form>
+
+        <!-- Résultats de la liste -->
+        <section id="result">
+            <!-- Les résultats des stagiaires seront affichés ici -->
+        </section>
+    </main>
+</body>
+</html>
