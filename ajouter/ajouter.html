@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ajouter un Stagiaire</title>
+    <link rel="stylesheet" href="styles.css">
+    <script src="scripts.js" defer></script>
+</head>
+<body>
+    <header>
+        <h1>Ajouter un Stagiaire</h1>
+    </header>
+    <main>
+        <form id="stagiaireForm" method="POST" action="ajouter.php">
+            <label for="matStagiaire">Matricule :</label>
+            <input type="text" id="matStagiaire" name="matStagiaire" required><br><br>
+
+            <label for="nomStagiaire">Nom :</label>
+            <input type="text" id="nomStagiaire" name="nomStagiaire" required><br><br>
+
+            <label for="prenomStagiaire">Prénom :</label>
+            <input type="text" id="prenomStagiaire" name="prenomStagiaire" required><br><br>
+
+            <label for="filiereStagiaire">Filière :</label>
+            <input type="text" id="filiereStagiaire" name="filiereStagiaire" required><br><br>
+
+            <label for="anneeEtude">Année d'Étude :</label>
+            <input type="number" id="anneeEtude" name="anneeEtude" min="1" max="5" required><br><br>
+
+            <label for="typeBac">Type de Bac :</label>
+            <input type="text" id="typeBac" name="typeBac" required><br><br>
+
+            <label for="anneeBac">Année du Bac :</label>
+            <input type="number" id="anneeBac" name="anneeBac" min="2000" max="2099" required><br><br>
+
+            <button type="submit">Ajouter</button>
+        </form>
+    </main>
+</body>
+</html>
