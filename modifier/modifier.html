@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Modifier un Stagiaire</title>
+    <link rel="stylesheet" href="styles.css">
+    <script src="scripts.js" defer></script>
+</head>
+<body>
+    <header>
+        <h1>Modifier un Stagiaire</h1>
+    </header>
+    <main>
+        <form id="searchForm" method="GET" action="modifier.php">
+            <div class="form-group">
+                <label for="matricule">Rechercher par Matricule :</label>
+                <input type="text" id="matricule" name="matricule" placeholder="Ex: 12345" required>
+            </div>
+            <button type="submit">Rechercher</button>
+        </form>
+
+        <!-- Formulaire de modification -->
+        <?php if (isset($_GET['matricule'])): ?>
+        <form id="updateForm" method="POST" action="modifier.php">
+            <input type="hidden" name="matStagiaire" value="<?= htmlspecialchars($_GET['matricule']) ?>">
+
+            <div class="form-group">
+                <label for="nomStagiaire">Nom :</label>
+                <input type="text" id="nomStagiaire" name="nomStagiaire" placeholder="Nom" value="<?= htmlspecialchars($stagiaire['nomStagiaire'] ?? '') ?>" required>
+            </div>
+
+            <div class="form-group">
+                <label for="prenomStagiaire">Prénom :</label>
+                <input type="text" id="prenomStagiaire" name="prenomStagiaire" placeholder="Prénom" value="<?= htmlspecialchars($stagiaire['prenomStagiaire'] ?? '') ?>" required>
+            </div>
+
+            <div class="form-group">
+                <label for="filiereStagiaire">Filière :</label>
+                <input type="text" id="filiereStagiaire" name="filiereStagiaire" value="<?= htmlspecialchars($stagiaire['filiereStagiaire'] ?? '') ?>" required>
+            </div>
+
+            <div class="form-group">
+                <label for="anneeEtude">Année d'Étude :</label>
+                <input type="number" id="anneeEtude" name="anneeEtude" value="<?= htmlspecialchars($stagiaire['anneeEtude'] ?? '') ?>" required>
+            </div>
+
+            <div class="form-group">
+                <label for="typeBac">Type de Bac :</label>
+                <input type="text" id="typeBac" name="typeBac" value="<?= htmlspecialchars($stagiaire['typeBac'] ?? '') ?>" required>
+            </div>
+
+            <div class="form-group">
+                <label for="anneeBac">Année du Bac :</label>
+                <input type="number" id="anneeBac" name="anneeBac" value="<?= htmlspecialchars($stagiaire['anneeBac'] ?? '') ?>" required>
+            </div>
+
+            <button type="submit" name="update">Modifier</button>
+        </form>
+        <?php endif; ?>
+    </main>
+</body>
+</html>
